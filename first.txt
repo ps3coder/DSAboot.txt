@@ -1,0 +1,20 @@
+def find_largest_difference(arr):
+    if len(arr) < 2:
+        return None  
+
+    min_element = arr[0]
+    max_difference = 0
+
+    for num in arr[1:]:
+        if num > min_element:
+            difference = num - min_element
+            max_difference = max(max_difference, difference)
+        else:
+            min_element = num
+
+    return max_difference
+
+
+arr = [7, 9, 5, 6, 3, 2]
+result = find_largest_difference(arr)
+print(result)  
